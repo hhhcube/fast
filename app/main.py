@@ -5,7 +5,7 @@ from app.core.config import get_settings
 from app.api.v1 import example
 
 # Local imports
-from app.app import create_app 
+from app.app import create_app
 
 app = create_app()
 
@@ -20,5 +20,3 @@ app.include_router(example.router, prefix="/api/v1")
 @app.get("/")
 def read_root() -> dict[str, str]:
     return {"message": "Welcome"}
-
-

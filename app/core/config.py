@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    project_name: str = "FastAPI Codex Template"
+    project_name: str = "Bookkeeping Dashboard"
     debug: bool = True
 
     class Config:

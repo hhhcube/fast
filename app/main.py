@@ -15,3 +15,5 @@ app.include_router(example.router, prefix="/api/v1")
 @app.get("/")
 def read_root() -> dict[str, str]:
     return {"message": "Welcome"}
+
+

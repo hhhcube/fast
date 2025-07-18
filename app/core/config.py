@@ -1,17 +1,17 @@
-from functools import lru_cache
+# app/core/config.py
 
-from pydantic import BaseSettings, Field, SettingsConfigDict
+from functools import lru_cache
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    project_name: str = Field("FastAPI Template", alias="PROJECT_NAME")
-    debug: bool = Field(False, alias="DEBUG")
+    project_name: str = "FastAPI Codex Template"
+    debug: bool = True
 
-    model_config = SettingsConfigDict(
-        env_file=".env", env_file_encoding="utf-8", populate_by_name=True
-    )
+    class Config:
+        env_file = ".env"
 
 
 @lru_cache
-def get_settings() -> Settings:
+def get_settings():
     return Settings()

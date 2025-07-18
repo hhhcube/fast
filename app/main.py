@@ -4,6 +4,11 @@ from dotenv import load_dotenv
 from app.core.config import get_settings
 from app.api.v1 import example
 
+# Local imports
+from app.app import create_app 
+
+app = create_app()
+
 load_dotenv()
 settings = get_settings()
 
